@@ -1,0 +1,1 @@
+print(sum(set([3 * n for n in range(1, 1000 // 3 + 1)] + [5 * n for n in range (1, 1000 // 5)])))
