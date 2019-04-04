@@ -25,4 +25,5 @@ for n in range(10, 100):
 product = 1
 for c in curiouses:
     product *= c[0] / c[1]
+
 print(round(product, 5))
