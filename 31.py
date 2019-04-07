@@ -1,16 +1,19 @@
-total_ways = 8
+class Memoizer:
+    def __init__(self, func):
+        self.func = func
+        self.mems = {}
+    def __call__(self, *args):
+        if args not in self.mems:
+            self.mems[args] = self.func(*args)
+        return self.mems[args]
 
-def is_good(ones, twos, fives, tens, twenties, fifties, hundreds):
-    return (ones + 2 * twos + 5 * fives + 10 * tens + 20 * twenties + 50 * fifties + 100 * hundreds) == 200
+def waysToMake(coins, total):
+    if total == 0:
+        return 1
+    if len(coins) == 0 or total < 0:
+        return 0
+    coinMax = max(coins)
+    return mem(coins, total - coinMax) + mem(coins - frozenset({coinMax}), total)
 
-total = 8
-for a in range(200):
-    for b in range(100):
-        for c in range(40):
-            for d in range(20):
-                for e in range(10):
-                    for f in range(4):
-                        for g in range(2):
-                            if is_good(a, b, c, d, e, f, g):
-                                total += 1
-print(total)
+mem  = Memoizer(waysToMake)
+print(mem(frozenset({1, 2, 5, 10,  20, 50, 100, 200}), 200))
