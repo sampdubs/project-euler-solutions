@@ -9,10 +9,14 @@ for i in range(len(primes)):
     sum_primes.append(sum_primes[i] + primes[i])
 
 for i in range(len(primes)):
+    if primes[i] >= below / 2:
+        break
     for j in range(i + 1, len(primes)):
         sm = sum_primes[j] - sum_primes[i]
         if sm < below:
             sums.add((j - i, sm))
+        else:
+            break
 
 prime_sums = []
 for n in sums:
