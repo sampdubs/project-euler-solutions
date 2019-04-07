@@ -16,4 +16,4 @@ def waysToMake(coins, total):
     return mem(coins, total - coinMax) + mem(coins - frozenset({coinMax}), total)
 
 mem  = Memoizer(waysToMake)
-print(mem(frozenset({1, 2, 5, 10,  20, 50, 100, 200}), 200))
+print(mem(frozenset({1, 2, 5, 10, 20, 50, 100, 200}), 200))
