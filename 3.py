@@ -21,3 +21,14 @@ def GPF(n):
             return num
 
 print(GPF(600851475143))
+
+# alternate method (much simpler, but takes ~15 seconds)
+# Suggested by Krish K.
+
+n = 1
+while True:
+    n += 1
+    if 600851475143 % n == 0:
+        if sympy.isprime(600851475143 // n):
+            print(600851475143 // n)
+            break
