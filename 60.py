@@ -3,14 +3,14 @@ from itertools import permutations
 
 def numDigits(n):
     digits = 0
-    if n < 0: digits = 1;
+    if n < 0: digits = 1
     while n:
         n //= 10
         digits += 1
     return digits
 
-def addZeros(n, zs):
-    for _ in range(zs):
+def addZeros(n, zeros):
+    for _ in range(zeros):
         n *= 10
     return n
 
