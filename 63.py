@@ -1,5 +1,3 @@
-from tqdm import trange
-
 def powFast(base, power):
     result = 1
     for _ in range(power):
