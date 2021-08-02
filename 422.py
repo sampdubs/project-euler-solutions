@@ -1,4 +1,3 @@
-from typing_extensions import TypeVarTuple
 from sympy import *
 
 x, y = symbols("x y", real=True)
