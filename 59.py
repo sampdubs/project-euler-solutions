@@ -1,4 +1,4 @@
-words = set(open("common english.txt").read().split("\n"))
+words = set(open("59_common english.txt").read().split("\n"))
 
 def decrypt(message, key):
     decrypted = []
