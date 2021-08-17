@@ -6,7 +6,8 @@ while True:
         if counter % i != 0:
             is_good = False
             break
-    print(counter)
+    if counter % 10000 == 0:
+        print(counter)
     if is_good:
         break
 
